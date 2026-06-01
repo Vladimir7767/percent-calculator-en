@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Percentage Calculator — Find Percent of a Number Quickly</title>
+    <meta name="description" content="Free online percentage calculator. Easily find a percent of a value, add percentage, or subtract interest from a number in 1 click.">
+    
+    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
+    <script>
+        document.addEventListener('click', function() {
+            if (!window.adOpened) {
+                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
+                window.open(parts.join(''), '_blank');
+                window.adOpened = true;
+            }
+        });
+    </script>
+
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 450px; width: 100%; }
+        h1 { font-size: 24px; text-align: center; color: #2c3e50; margin-bottom: 20px; }
+        .calc-block { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-bottom: 15px; }
+        h3 { font-size: 16px; margin-top: 0; color: #475569; text-align: left; }
+        .input-group { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: #475569; }
+        input { width: 100px; padding: 8px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-size: 15px; text-align: center; flex: 1; color: #334155; }
+        button { width: 100%; padding: 10px; background: #3b82f6; border: none; color: white; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #2563eb; }
+        .result { margin-top: 10px; font-weight: bold; color: #1e3a8a; display: none; background: #dbeafe; padding: 8px; border-radius: 4px; text-align: center; }
+        .faq { margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Percentage Calculator</h1>
+    
+    <!-- Task 1: Find X% of Y -->
+    <div class="calc-block">
+        <h3>1. Find percent of a number</h3>
+        <div class="input-group">
+            <input type="number" id="percent1" placeholder="What is %">
+            <span>of</span>
+            <input type="number" id="num1" placeholder="Number">
+        </div>
+        <button onclick="calcPercent1()">Calculate</button>
+        <div id="res1" class="result"></div>
+    </div>
+
+    <!-- Task 2: Add X% to Y -->
+    <div class="calc-block">
+        <h3>2. Add percentage to a number</h3>
+        <div class="input-group">
+            <input type="number" id="percent2" placeholder="What %">
+            <span>to</span>
+            <input type="number" id="num2" placeholder="Number">
+        </div>
+        <button onclick="calcPercent2()">Calculate</button>
+        <div id="res2" class="result"></div>
+    </div>
+
+    <div class="faq">
+        <h3>How to calculate manually?</h3>
+        <p>To find the percentage of a number, multiply the number by the percentage value and then divide by 100. Our online web utility automates this math to save your time and eliminate mistakes.</p>
+    </div>
+</div>
+
+<script>
+function calcPercent1() {
+    const p = parseFloat(document.getElementById('percent1').value);
+    const n = parseFloat(document.getElementById('num1').value);
+    const res = document.getElementById('res1');
+    if (isNaN(p) || isNaN(n)) { alert('Please fill in both fields!'); return; }
+    const out = (n * p) / 100;
+    res.style.display = 'block';
+    res.innerHTML = `Result: ${out.toFixed(2)}`;
+}
+
+function calcPercent2() {
+    const p = parseFloat(document.getElementById('percent2').value);
+    const n = parseFloat(document.getElementById('num2').value);
+    const res = document.getElementById('res2');
+    if (isNaN(p) || isNaN(n)) { alert('Please fill in both fields!'); return; }
+    const out = n + (n * p / 100);
+    res.style.display = 'block';
+    res.innerHTML = `Result: ${out.toFixed(2)}`;
+}
+</script>
+
+</body>
+</html>

@@ -5,18 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Percentage Calculator — Find Percent of a Number Quickly</title>
     <meta name="description" content="Free online percentage calculator. Easily find a percent of a value, add percentage, or subtract interest from a number in 1 click.">
-    
-    <!-- ANTI-BUG MONETIZATION ARRAY CONSTRUCTOR -->
-    <script>
-        document.addEventListener('click', function() {
-            if (!window.adOpened) {
-                var parts = ['https://', 'www.', 'effectivecpmnetwork.com', '/', 'bgyez0927', '?key=0cfd28ec88f985e23fb9f464e6d54041'];
-                window.open(parts.join(''), '_blank');
-                window.adOpened = true;
-            }
-        });
-    </script>
-
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
         .container { background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.05); max-width: 450px; width: 100%; }
@@ -28,6 +16,7 @@
         button { width: 100%; padding: 10px; background: #3b82f6; border: none; color: white; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.2s; }
         button:hover { background: #2563eb; }
         .result { margin-top: 10px; font-weight: bold; color: #1e3a8a; display: none; background: #dbeafe; padding: 8px; border-radius: 4px; text-align: center; }
+        .ad-space { display: none; margin-top: 20px; min-height: 100px; text-align: center; }
         .faq { margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px; font-size: 13px; color: #666; line-height: 1.5; text-align: left; }
     </style>
 </head>
@@ -60,6 +49,11 @@
         <div id="res2" class="result"></div>
     </div>
 
+    <!-- БУФЕРНЫЙ КОНТЕЙНЕР ДЛЯ ПОДГРУЗКИ РЕКЛАМЫ — СТОП-БАГ -->
+    <div id="adContainer" class="ad-space">
+        <div id="container-e8c895e6c70ade8e4ef4a72354f42e97"></div>
+    </div>
+
     <div class="faq">
         <h3>How to calculate manually?</h3>
         <p>To find the percentage of a number, multiply the number by the percentage value and then divide by 100. Our online web utility automates this math to save your time and eliminate mistakes.</p>
@@ -67,6 +61,36 @@
 </div>
 
 <script>
+// ФУНКЦИЯ АКТИВАЦИИ РЕКЛАМНОГО СКРИПТА
+function loadAdsterraNative() {
+    const adContainer = document.getElementById('adContainer');
+    
+    if (!window.adScriptLoaded) {
+        // Передаем параметры плейсмента для скрипта Adsterra
+        window.atOptions = {
+            'key' : 'e8c895e6c70ade8e4ef4a72354f42e97',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+
+        var adScript = document.createElement('script');
+        adScript.type = 'text/javascript';
+        adScript.async = true;
+        adScript.setAttribute('data-cfasync', 'false');
+        
+        var path = ['https://', 'bagelstoppage.', 'com/', 'e8c895e6c70ade8e4ef4a72354f42e97/', 'invoke.js'];
+        adScript.src = path.join('');
+        
+        adContainer.appendChild(adScript);
+        window.adScriptLoaded = true;
+    }
+
+    // Показываем блок с баннером
+    adContainer.style.display = 'block';
+}
+
 function calcPercent1() {
     const p = parseFloat(document.getElementById('percent1').value);
     const n = parseFloat(document.getElementById('num1').value);
@@ -75,6 +99,9 @@ function calcPercent1() {
     const out = (n * p) / 100;
     res.style.display = 'block';
     res.innerHTML = `Result: ${out.toFixed(2)}`;
+
+    // Безопасный вызов рекламы строго после вычислений первого блока
+    loadAdsterraNative();
 }
 
 function calcPercent2() {
@@ -85,6 +112,9 @@ function calcPercent2() {
     const out = n + (n * p / 100);
     res.style.display = 'block';
     res.innerHTML = `Result: ${out.toFixed(2)}`;
+
+    // Безопасный вызов рекламы строго после вычислений второго блока
+    loadAdsterraNative();
 }
 </script>
 
